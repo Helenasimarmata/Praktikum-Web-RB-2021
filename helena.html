@@ -1,40 +1,35 @@
-function changeTheme(){
-	let option = document.getElementById("themeOption");
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Praktikum Minggu 3</title>
+		<link rel="stylesheet" type="text/css" href="">
+	</head>
 
-	if (option.options[option.selectedIndex].value == "black") {
-		document.body.style.background = "black";
-		document.body.style.color = "white";
-	}
-	else if (option.options[option.selectedIndex].value == "white") {
-		document.body.style.background = "white";
-		document.body.style.color = "black";
-	}
-}
+	<body>
 
-function changeWeather(){
-	let option = document.getElementById("weatherOption");
+		<label for="themeOption">Select Theme:</label>
+		<select name="themeOption" id="themeOption" onchange="changeTheme()">
+		  <option value="white">White</option>
+		  <option value="black">Black</option>
+		</select>
 
-	if (option.options[option.selectedIndex].value == "sunny") {
-		document.getElementById("weather").innerHTML = "It is nice and sunny outside today. Wear shorts! Goto the beach, or park, and get an ice cream";	
-	}
-	else if (option.options[option.selectedIndex].value == "rainy") {
-		document.getElementById("weather").innerHTML = "Rain is falling outside, take a rain coat and a brolly, and don't stay out for too long";
-		
-	}
-	else{
-		document.getElementById("weather").innerHTML = "";
-	}
-}
+		<h1>This is my website</h1>
 
-function getFactorial (){
-	let number =  document.getElementById("factorial");
+	 	<label for="weatherOption">Select the weather type today:</label>
+		<select name="weatherOption" id="weatherOption" onchange="changeWeather()">
+		  <option></option>
+		  <option value="sunny">Sunny</option>
+		  <option value="rainy">Rainy</option>
+		</select>
 
-	let result = 1;
+		<p id="weather"></p>
 
-    for(let i = 1; i <= number.value; i++) {
-      result *= i;
-    }
+		<label for="factorial">Input Number:</label>
+		<input type="number" id="factorial" name="factorial">
+		<button onclick="getFactorial()">Get Factorial</button>
+		<p id="result"></p>
 
-    document.getElementById("result").innerHTML = `The factorial of ${number.value} is ${result} `;
-
-}
+	  <script src="owen.js"></script>
+	</body>
+</html>
